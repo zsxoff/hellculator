@@ -11,6 +11,9 @@
 *.prof
 *.test
 
+# env
+.env
+
 # GoLand
 /.idea/
 
