@@ -22,19 +22,19 @@ func (s *server) ReqCalc(_ context.Context, in *protobuf.Calc) (*protobuf.Result
 
 	switch in.Operation {
 	// `+`
-	case protobuf.Calc_add:
+	case protobuf.Calc_ADD:
 		return &protobuf.Result{Result: in.A + in.B}, nil
 
 	// `-`
-	case protobuf.Calc_sub:
+	case protobuf.Calc_SUB:
 		return &protobuf.Result{Result: in.A - in.B}, nil
 
 	// `*`
-	case protobuf.Calc_mul:
+	case protobuf.Calc_MUL:
 		return &protobuf.Result{Result: in.A * in.B}, nil
 
 	// `/`
-	case protobuf.Calc_div:
+	case protobuf.Calc_DIV:
 		if in.B == 0 {
 			return nil, status.Errorf(codes.InvalidArgument, fmt.Sprintln("divide by zero", in.A, in.B))
 		}

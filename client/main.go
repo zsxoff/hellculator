@@ -23,7 +23,7 @@ func main() {
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second*2)
 	defer cancel()
 
-	result, err := client.ReqCalc(ctx, &protobuf.Calc{A: 2.0, B: 1.0, Operation: protobuf.Calc_add})
+	result, err := client.ReqCalc(ctx, &protobuf.Calc{A: 2.0, B: 1.0, Operation: protobuf.Calc_ADD})
 	if err != nil {
 		log.Fatal(err)
 	}
