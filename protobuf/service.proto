@@ -1,0 +1,45 @@
+/* Base service Protobuf file. */
+
+syntax = "proto3";
+package hellculator;
+
+option go_package = "github.com/zsxoff/hellculator/protobuf";
+
+// Calc is a base entity for calculation, ex. a = 1, b = 2, operation = "+".
+message Calc {
+    // a - first argument for operation.
+    double a = 1;
+
+    // b - second argument for operation.
+    double b = 2;
+
+    // Operation - calculator operation.
+    enum Operation {
+        // ADD - '+'.
+        ADD = 0;
+
+        // SUB - '-'.
+        SUB = 1;
+
+        // DIV - '/'
+        DIV = 2;
+
+        // MUL - '*'.
+        MUL = 3;
+    }
+
+    // operation - enum of Operation.
+    Operation operation = 3;
+}
+
+// Result is a result of calculation.
+message Result {
+    // result - double result of calculation.
+    double result = 1;
+}
+
+// CalculatorService - realisation of calculator.
+service CalculatorService {
+    // ReqCalc - calculation request.
+    rpc ReqCalc(Calc) returns (Result);
+}
