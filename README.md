@@ -1,12 +1,14 @@
 # Hellculator
 
-Very base calculator based on gRPC.
+> Very base calculator based on gRPC.
+
+---
 
 You don't need this.
 
 Really.
 
-## LICENSE
+## License
 
 [![License: Unlicense](https://img.shields.io/badge/License-Unlicense-green.svg?style=flat-square)](https://unlicense.org/)
 
